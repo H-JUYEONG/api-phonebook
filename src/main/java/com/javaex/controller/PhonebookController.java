@@ -27,12 +27,12 @@ public class PhonebookController {
 
 	/* 리스트 가져오기 */
 	@GetMapping("/api/persons")
-	public List<PersonVo> getList() {
+	public JsonResult getList() {
 		System.out.println("PhonebookController.getList()");
 
 		List<PersonVo> personList = phonebookService.exeGetPersonList();
 
-		return personList;
+		return JsonResult.success(personList);
 	}
 
 	/* 등록 */
